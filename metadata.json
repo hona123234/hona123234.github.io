@@ -1,0 +1,6 @@
+{
+  "name": "Book Landing Page Builder",
+  "description": "Lập trình & thiết kế Landing Page bán sách, tối ưu hóa hiển thị Mobile hoàn hảo, hỗ trợ xuất mã HTML/CSS cho Elementor và đồng bộ Google Sheets.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
