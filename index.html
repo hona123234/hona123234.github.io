@@ -565,16 +565,6 @@
       formMsg.textContent = "Đang kết nối hệ thống đăng ký sách QBooks...";
       formMsg.classList.remove('hidden');
 
-      const payload = {
-        fullname: fullname,
-        phone: phone,
-        address: address,
-        combo: combopackage,
-        notes: notes,
-        price: price,
-        timestamp: new Date().toLocaleString('vi-VN')
-      };
-
       try {
         if (!GOOGLE_SHEET_WEB_APP_URL || GOOGLE_SHEET_WEB_APP_URL.includes("CHƯA_CẤU_HÌNH")) {
           // Giao diện lưu local giả lập nếu chưa có link Google Sheets
@@ -589,13 +579,26 @@
           return;
         }
 
-        const response = await fetch(GOOGLE_SHEET_WEB_APP_URL, {
+        // Định dạng dữ liệu dạng url-encoded trùng khớp chính xác với doPost của Apps Script:
+        // name, phone, address, book, note
+        const params = new URLSearchParams();
+        params.append('name', fullname);
+        params.append('phone', phone);
+        params.append('address', address);
+        params.append('book', combopackage);
+        params.append('note', notes);
+
+        // Nối query parameters vào URL để đảm bảo Google Apps Script nhận diện được ở e.parameter trong môi trường no-cors
+        let requestUrl = GOOGLE_SHEET_WEB_APP_URL;
+        requestUrl += (requestUrl.includes('?') ? '&' : '?') + params.toString();
+
+        const response = await fetch(requestUrl, {
           method: 'POST',
           mode: 'no-cors', // Cần thiết đối với Google Web App URL để tránh lỗi CORS khi CORS không hỗ trợ
           headers: {
-            'Content-Type': 'application/json',
+            'Content-Type': 'application/x-www-form-urlencoded',
           },
-          body: JSON.stringify(payload)
+          body: params.toString()
         });
 
         // Với 'no-cors' của fetch, response sẽ opaque, chúng ta thông báo thành công
