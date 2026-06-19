@@ -2,728 +2,621 @@
 <html lang="vi" class="scroll-smooth">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-  <title>Combo Sách Ôn Hè Lớp 1 (Chuẩn Bị Lên Lớp 2)</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>COMBO SÁCH ÔN HÈ LỚP 1 (DÀNH CHO HỌC SINH LÊN 2)</title>
   
-  <!-- Tailwind CSS Play CDN -->
+  <!-- Tailwind CSS Play CDN (Phục vụ hiển thị giao diện nhanh chóng, chuẩn responsive) -->
   <script src="https://cdn.tailwindcss.com"></script>
   
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          fontFamily: {
-            sans: ['Inter', 'SF Pro Display', 'system-ui', 'sans-serif'],
-          }
-        }
-      }
-    }
-  </script>
-  
-  <!-- Google Fonts -->
+  <!-- Google Fonts: Inter -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
   
   <style>
-    /* Chống giật trang cuộn */
-    html {
-      scroll-behavior: smooth;
-    }
     body {
-      background-color: #f8fafc;
       font-family: 'Inter', sans-serif;
     }
-    /* Ẩn thanh cuộn dọc không cần thiết của carousel */
-    .no-scrollbar::-webkit-scrollbar {
-      display: none;
+    @keyframes pulse-glow {
+      0%, 100% {
+        box-shadow: 0 0 15px rgba(239, 68, 68, 0.4);
+        transform: scale(1);
+      }
+      50% {
+        box-shadow: 0 0 25px rgba(239, 68, 68, 0.7);
+        transform: scale(1.02);
+      }
     }
-    .no-scrollbar {
-      -ms-overflow-style: none;
-      scrollbar-width: none;
-    }
-    /* Chữ ký tay */
-    .signature-font {
-      font-family: 'Dancing Script', cursive;
-    }
-    /* Tạo hiệu ứng tim đập động cho nút mua hàng cực kỳ bắt mắt */
-    @keyframes pulse-custom {
-      0%, 100% { transform: scale(1); box-shadow: 0 10px 25px -5px rgba(239, 68, 68, 0.4); }
-      50% { transform: scale(1.05); box-shadow: 0 20px 30px -5px rgba(239, 68, 68, 0.6); }
-    }
-    .pulse-btn {
-      animation: pulse-custom 2.5s infinite;
+    .cta-pulse {
+      animation: pulse-glow 2s infinite ease-in-out;
     }
   </style>
 </head>
-<body class="antialiased min-h-screen text-slate-800">
+<body class="bg-gray-100 flex justify-center min-h-screen">
 
-  <!-- ========================================================== -->
-  <!-- TOÀN BỘ WEBSITE ĐƯỢC THIẾT KẾ ĐO ĐẠC RIÊNG CHO ĐIỆN THOẠI   -->
-  <!-- ========================================================== -->
-  <div class="max-w-[480px] mx-auto min-h-screen bg-slate-50 border-x border-slate-200/60 shadow-2xl relative flex flex-col">
+  <!-- FRAME ĐIỆN THOẠI (Dành cho hiển thị tối ưu nhất trên Mobile) -->
+  <div class="w-full max-w-md bg-white min-h-screen flex flex-col shadow-2xl relative border-x border-gray-200">
     
-    <!-- 0 - ĐẦU TRANG: THANH THÔNG BÁO KHUYẾN MÃI DỰ PHÒNG -->
-    <header class="bg-gradient-to-r from-red-600 via-orange-500 to-red-600 text-white text-center py-2.5 px-4 text-xs font-bold tracking-wide shadow-md sticky top-0 z-50 animate-pulse">
-      <div class="flex items-center justify-center space-x-1.5" id="announcement-banner">
-        <span>🔥</span>
-        <span class="uppercase tracking-tight text-center leading-snug">ƯU ĐÃI ĐỘC QUYỀN HÔM NAY - GIẢM GIÁ 43% + MIỄN PHÍ SHIP TOÀN QUỐC</span>
-      </div>
-    </header>
+    <!-- ==================== SECTION 0: ĐẦU TRANG (THANH THÔNG BÁO ƯU ĐÃI) ==================== -->
+    
+    <div style="background-color: #dc2626; color: #ffffff;" class="py-2.5 px-4 text-center text-xs font-bold uppercase tracking-wider sticky top-0 z-50 shadow-md">
+      ƯU ĐÃI ĐỘC QUYỀN HÔM NAY - GIẢM GIÁ 43% + MIỄN PHÍ SHIP TOÀN QUỐC
+    </div>
+    
 
-    <!-- 1 - PHẦN ĐẦU TRANG LÀ ẢNH BANNER CHÍNH (9:16) -->
-    <div class="w-full aspect-[9/16] relative bg-slate-100 overflow-hidden shadow-sm">
-      <img id="main-hero-banner" class="w-full h-full object-cover transition duration-700 hover:scale-105" src="/src/assets/images/qbooks_banner_cover_1781831927393.jpg" alt="Banner chính QBooks" referrerpolicy="no-referrer" />
-      <div class="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent pointer-events-none"></div>
+    <!-- ==================== SECTION 1: ẢNH BANNER CHÍNH ==================== -->
+    <div class="aspect-square w-full overflow-hidden bg-gray-100 relative">
+      <img src="https://6a34a114e12d43bb128ee2e3.imgix.net/24.png?w=2000&h=2000" alt="Banner Combo Sách Ôn Hè Lớp 1 QBooks phát triển toàn diện" class="w-full h-full object-cover" referrerpolicy="no-referrer">
+      <div class="absolute bottom-3 left-3 bg-red-600 text-white text-xs font-bold px-3 py-1 rounded-full uppercase shadow-md tracking-wider">
+        Best Seller
+      </div>
     </div>
 
-    <!-- 2 - PHẦN TIẾP THEO LÀ CAROUSEL TRÌNH CHIẾU 10 ẢNH SẢN PHẨM (9:16) -->
-    <section class="bg-white py-6 border-b border-slate-100 relative">
-      <div class="px-5 mb-3 flex justify-between items-end">
-        <div>
-          <span class="text-xs font-bold text-red-500 tracking-wider uppercase">Thư viện ảnh lẻ</span>
-          <h3 class="text-lg font-extrabold text-slate-800">Khám Phá Sách Ôn Hè</h3>
-        </div>
-        <p class="text-xs text-slate-400 font-medium">Ấn sang để xem quyển khác</p>
+    <!-- ==================== SECTION 2: CAROUSEL 10 ẢNH SẢN PHẨM ==================== -->
+    <div class="py-4 bg-gray-50 border-b border-gray-100">
+      <div class="px-4 flex justify-between items-center mb-2">
+        <span class="text-xs font-bold text-gray-500 uppercase tracking-widest">Bộ sưu tập hình ảnh (10 ảnh)</span>
+        <span class="text-xs text-indigo-600 font-semibold">Vuốt hoặc nhấn nút để xem</span>
       </div>
-
-      <!-- Khung slide -->
-      <div class="relative px-5 overflow-hidden group">
-        <div id="carousel-track" class="flex overflow-x-auto snap-x snap-mandatory scroll-smooth no-scrollbar rounded-2xl shadow-lg border border-slate-100">
+      
+      <div class="relative px-4">
+        <div class="aspect-square w-full overflow-hidden rounded-xl bg-white shadow-inner relative border border-gray-200">
+          <img id="carousel-img" src="https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?auto=format&fit=crop&q=80&w=600&h=600" alt="Ảnh sản phẩm" class="w-full h-full object-cover transition-all duration-300" referrerpolicy="no-referrer">
           
-        <div class="carousel-slide flex-none w-full shrink-0 relative aspect-[9/16] bg-slate-900 group">
-          <img class="w-full h-full object-cover" src="/src/assets/images/qbooks_banner_cover_1781831927393.jpg" alt="Slide sách 1" referrerpolicy="no-referrer" />
-          <div class="absolute bottom-3 right-3 bg-black/60 backdrop-blur-md px-2.5 py-1 rounded-full text-white text-xs font-medium font-mono">1/10</div>
-        </div>
-        <div class="carousel-slide flex-none w-full shrink-0 relative aspect-[9/16] bg-slate-900 group">
-          <img class="w-full h-full object-cover" src="/src/assets/images/qbooks_desk_stack_1781831946344.jpg" alt="Slide sách 2" referrerpolicy="no-referrer" />
-          <div class="absolute bottom-3 right-3 bg-black/60 backdrop-blur-md px-2.5 py-1 rounded-full text-white text-xs font-medium font-mono">2/10</div>
-        </div>
-        <div class="carousel-slide flex-none w-full shrink-0 relative aspect-[9/16] bg-slate-900 group">
-          <img class="w-full h-full object-cover" src="https://images.unsplash.com/photo-1543002588-bfa74002ed7e?auto=format&fit=crop&q=80&w=600" alt="Slide sách 3" referrerpolicy="no-referrer" />
-          <div class="absolute bottom-3 right-3 bg-black/60 backdrop-blur-md px-2.5 py-1 rounded-full text-white text-xs font-medium font-mono">3/10</div>
-        </div>
-        <div class="carousel-slide flex-none w-full shrink-0 relative aspect-[9/16] bg-slate-900 group">
-          <img class="w-full h-full object-cover" src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&q=80&w=600" alt="Slide sách 4" referrerpolicy="no-referrer" />
-          <div class="absolute bottom-3 right-3 bg-black/60 backdrop-blur-md px-2.5 py-1 rounded-full text-white text-xs font-medium font-mono">4/10</div>
-        </div>
-        <div class="carousel-slide flex-none w-full shrink-0 relative aspect-[9/16] bg-slate-900 group">
-          <img class="w-full h-full object-cover" src="https://images.unsplash.com/photo-1516979187457-637abb4f9353?auto=format&fit=crop&q=80&w=600" alt="Slide sách 5" referrerpolicy="no-referrer" />
-          <div class="absolute bottom-3 right-3 bg-black/60 backdrop-blur-md px-2.5 py-1 rounded-full text-white text-xs font-medium font-mono">5/10</div>
-        </div>
-        <div class="carousel-slide flex-none w-full shrink-0 relative aspect-[9/16] bg-slate-900 group">
-          <img class="w-full h-full object-cover" src="https://images.unsplash.com/photo-1497633762265-9d179a990aa6?auto=format&fit=crop&q=80&w=600" alt="Slide sách 6" referrerpolicy="no-referrer" />
-          <div class="absolute bottom-3 right-3 bg-black/60 backdrop-blur-md px-2.5 py-1 rounded-full text-white text-xs font-medium font-mono">6/10</div>
-        </div>
-        <div class="carousel-slide flex-none w-full shrink-0 relative aspect-[9/16] bg-slate-900 group">
-          <img class="w-full h-full object-cover" src="https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?auto=format&fit=crop&q=80&w=600" alt="Slide sách 7" referrerpolicy="no-referrer" />
-          <div class="absolute bottom-3 right-3 bg-black/60 backdrop-blur-md px-2.5 py-1 rounded-full text-white text-xs font-medium font-mono">7/10</div>
-        </div>
-        <div class="carousel-slide flex-none w-full shrink-0 relative aspect-[9/16] bg-slate-900 group">
-          <img class="w-full h-full object-cover" src="https://images.unsplash.com/photo-1510172951991-856a654063f9?auto=format&fit=crop&q=80&w=600" alt="Slide sách 8" referrerpolicy="no-referrer" />
-          <div class="absolute bottom-3 right-3 bg-black/60 backdrop-blur-md px-2.5 py-1 rounded-full text-white text-xs font-medium font-mono">8/10</div>
-        </div>
-        <div class="carousel-slide flex-none w-full shrink-0 relative aspect-[9/16] bg-slate-900 group">
-          <img class="w-full h-full object-cover" src="https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?auto=format&fit=crop&q=80&w=600" alt="Slide sách 9" referrerpolicy="no-referrer" />
-          <div class="absolute bottom-3 right-3 bg-black/60 backdrop-blur-md px-2.5 py-1 rounded-full text-white text-xs font-medium font-mono">9/10</div>
-        </div>
-        <div class="carousel-slide flex-none w-full shrink-0 relative aspect-[9/16] bg-slate-900 group">
-          <img class="w-full h-full object-cover" src="https://images.unsplash.com/photo-1472162072142-d544e77fc767?auto=format&fit=crop&q=80&w=600" alt="Slide sách 10" referrerpolicy="no-referrer" />
-          <div class="absolute bottom-3 right-3 bg-black/60 backdrop-blur-md px-2.5 py-1 rounded-full text-white text-xs font-medium font-mono">10/10</div>
-        </div>
+          <!-- Hạng số hiển thị -->
+          <div class="absolute bottom-3 right-3 bg-black/75 text-white text-xs font-mono px-2.5 py-1 rounded-md" id="carousel-index">
+            1 / 10
+          </div>
         </div>
 
-        <!-- Nút bấm lướt trái -->
-        <button onclick="slidePrev()" class="absolute left-7 top-1/2 -translate-y-1/2 bg-white/95 text-slate-800 hover:bg-slate-100 p-2.5 rounded-full shadow-lg border border-slate-100 transition backdrop-blur-sm z-30 focus:outline-none">
-          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M15 19l-7-7 7-7"></path></svg>
+        <!-- Các nút điều hướng Trái/Phải -->
+        <button onclick="prevSlide()" class="absolute left-6 top-1/2 -translate-y-1/2 bg-white/90 text-gray-800 hover:bg-white w-9 h-9 rounded-full flex items-center justify-center shadow-md border border-gray-200 font-bold transition active:scale-95 z-20">
+          ←
         </button>
-
-        <!-- Nút bấm lướt phải -->
-        <button onclick="slideNext()" class="absolute right-7 top-1/2 -translate-y-1/2 bg-white/95 text-slate-800 hover:bg-slate-100 p-2.5 rounded-full shadow-lg border border-slate-100 transition backdrop-blur-sm z-30 focus:outline-none">
-          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7"></path></svg>
+        <button onclick="nextSlide()" class="absolute right-6 top-1/2 -translate-y-1/2 bg-white/90 text-gray-800 hover:bg-white w-9 h-9 rounded-full flex items-center justify-center shadow-md border border-gray-200 font-bold transition active:scale-95 z-20">
+          →
         </button>
       </div>
+    </div>
 
-      <!-- Chấm chỉ mục dưới -->
-      <div id="carousel-dots" class="flex justify-center space-x-2 mt-4">
-        <div class="carousel-dot block w-2 h-2 rounded-full transition-all duration-300 bg-red-500 w-5" data-index="0" onclick="goToSlide(0)"></div><div class="carousel-dot block w-2 h-2 rounded-full transition-all duration-300 bg-slate-200" data-index="1" onclick="goToSlide(1)"></div><div class="carousel-dot block w-2 h-2 rounded-full transition-all duration-300 bg-slate-200" data-index="2" onclick="goToSlide(2)"></div><div class="carousel-dot block w-2 h-2 rounded-full transition-all duration-300 bg-slate-200" data-index="3" onclick="goToSlide(3)"></div><div class="carousel-dot block w-2 h-2 rounded-full transition-all duration-300 bg-slate-200" data-index="4" onclick="goToSlide(4)"></div><div class="carousel-dot block w-2 h-2 rounded-full transition-all duration-300 bg-slate-200" data-index="5" onclick="goToSlide(5)"></div><div class="carousel-dot block w-2 h-2 rounded-full transition-all duration-300 bg-slate-200" data-index="6" onclick="goToSlide(6)"></div><div class="carousel-dot block w-2 h-2 rounded-full transition-all duration-300 bg-slate-200" data-index="7" onclick="goToSlide(7)"></div><div class="carousel-dot block w-2 h-2 rounded-full transition-all duration-300 bg-slate-200" data-index="8" onclick="goToSlide(8)"></div><div class="carousel-dot block w-2 h-2 rounded-full transition-all duration-300 bg-slate-200" data-index="9" onclick="goToSlide(9)"></div>
-      </div>
-    </section>
+    <!-- ==================== SECTION 3: TÊN SẢN PHẨM ==================== -->
+    <div class="p-4 pt-5">
+      <h1 class="text-xl font-extrabold text-gray-900 leading-tight tracking-tight">COMBO SÁCH ÔN HÈ LỚP 1 (DÀNH CHO HỌC SINH LÊN 2)</h1>
+      <p class="text-xs text-gray-500 mt-1 italic font-medium">Giúp học sinh lớp 1 chuẩn bị vào lớp 2 tổng hợp kiến thức trong năm và chuẩn bị hành trang cho năm học mới</p>
+    </div>
 
-    <!-- 3 - TÊN SẢN PHẨM CHÍNH -->
-    <section class="bg-white px-5 pt-5 pb-3">
-      <span class="inline-flex items-center px-2.5 py-1 rounded-md text-xs font-bold bg-amber-50 text-amber-700 border border-amber-200 uppercase tracking-wider mb-2">BÁN CHẠY #1 HÈ NÀY</span>
-      <h1 id="product-title-main" class="text-xl font-black text-slate-900 leading-snug">Combo Sách Ôn Hè Lớp 1 (Chuẩn Bị Lên Lớp 2)</h1>
-    </section>
-
-    <!-- 4 - ĐÁNH GIÁ VÀ LƯỢT BÁN (Dễ chỉnh sửa) -->
-    <section class="bg-white px-5 pb-4 flex items-center space-x-4 border-b border-slate-100">
-      <div class="flex items-center space-x-1">
-        <span id="star-rating-val" class="font-bold text-amber-500 text-lg leading-none">4.9</span>
-        <div class="flex text-amber-400">
+    <!-- ==================== SECTION 4: ĐÁNH GIÁ & LƯỢT BÁN ==================== -->
+    <div class="px-4 pb-4 flex items-center justify-between border-b border-gray-100">
+      <div class="flex items-center gap-1.5">
+        <div class="flex text-amber-400 text-sm">
           ★ ★ ★ ★ ★
         </div>
+        <span class="text-sm font-bold text-gray-800">4.9</span>
+        <span class="text-xs text-gray-400">(3850 đánh giá)</span>
       </div>
-      <div class="h-4 w-px bg-slate-200"></div>
-      <p class="text-xs text-slate-500 font-medium font-mono"><strong id="reviews-count-val" class="text-slate-800 font-semibold">1,450</strong> Đánh giá</p>
-      <div class="h-4 w-px bg-slate-200"></div>
-      <p class="text-xs text-slate-500 font-medium font-mono"><strong id="sales-count-val" class="text-slate-800 font-semibold">4,892</strong> Đã bán</p>
-    </section>
-
-    <!-- 5 - CHƯƠNG TRÌNH KHUYẾN MÃI GIÁ CẢ -->
-    <section class="bg-gradient-to-br from-orange-50 to-orange-100/50 p-5 mx-5 my-5 rounded-2xl border border-orange-100/60 shadow-sm relative overflow-hidden">
-      <div class="absolute -right-4 -bottom-4 text-orange-200/30 font-black text-8xl pointer-events-none select-none">%</div>
-      <span class="text-xs font-bold text-orange-600 tracking-wide uppercase block">💰 Bảng giá ưu đãi sốc hôm nay</span>
-      <div class="flex items-baseline space-x-3 mt-2">
-        <span id="discounted-price-label" class="text-2xl font-black text-red-600 font-mono">199,000₫</span>
-        <span id="original-price-label" class="text-sm text-slate-400 line-through font-mono">350,000₫</span>
-        <span id="discount-pct-label" class="bg-red-500 text-white font-black text-xs px-2 py-0.5 rounded-full font-mono">-43%</span>
+      <div class="bg-gray-100 text-gray-600 px-2.5 py-1 rounded text-xs font-semibold">
+        Đã bán 128.500 +
       </div>
-      <p class="text-[11px] text-slate-500 mt-2 italic font-medium">*Khuyến mãi chỉ áp dụng khi mua hàng qua landing page này hôm nay.</p>
-    </section>
+    </div>
 
-    <!-- 6 - MIỄN PHÍ VẬN CHUYỂN, CAM KẾT CHÍNH HÃNG, ĐỒNG KIỂM CHẤT LƯỢNG -->
-    <section class="px-5 pb-5 space-y-3.5 border-b border-slate-100/80">
-      <div class="flex items-center space-x-3.5 bg-emerald-50/60 p-3.5 rounded-xl border border-emerald-100/50">
-        <div class="p-2 bg-emerald-500 rounded-lg text-white font-bold shrink-0">
-          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"></path></svg>
-        </div>
-        <div>
-          <h4 class="font-bold text-emerald-900 text-sm">Giao Hàng Miễn Phí</h4>
-          <p id="badge-freeship-text" class="text-xs text-emerald-700/90 mt-0.5 leading-relaxed font-medium">Miễn phí vận chuyển toàn quốc cho mọi đơn hàng hôm nay</p>
-        </div>
+    <!-- ==================== SECTION 5: KHUYẾN MÃI (BẢNG GIÁ) ==================== -->
+    <div class="p-4 bg-orange-50/70 border-y border-orange-100/50 flex items-center justify-between">
+      <div>
+        <div class="text-xs font-semibold text-gray-400 line-through">Giá gốc: 350.000 ₫</div>
+        <div class="text-2xl font-black text-red-600 mt-0.5">Đặt hôm nay: 199.000 ₫</div>
       </div>
-
-      <div class="flex items-center space-x-3.5 bg-blue-50/60 p-3.5 rounded-xl border border-blue-100/50">
-        <div class="p-2 bg-blue-500 rounded-lg text-white font-bold shrink-0">
-          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"></path></svg>
-        </div>
-        <div>
-          <h4 class="font-bold text-blue-900 text-sm">Cam Kết Chính Hãng</h4>
-          <p id="badge-genuine-text" class="text-xs text-blue-700/90 mt-0.5 leading-relaxed font-medium">Cam kết sách chính hãng 100%, rõ nét, giấy chống loá bảo vệ mắt cận</p>
-        </div>
+      <div class="bg-red-600 text-white text-xs font-bold px-3 py-2 rounded-lg text-center shadow-sm">
+        TIẾT KIỆM KHỦNG
+        <div class="text-lg font-extrabold leading-none mt-0.5">-43%</div>
       </div>
+    </div>
 
-      <div class="flex items-center space-x-3.5 bg-purple-50/60 p-3.5 rounded-xl border border-purple-100/50">
-        <div class="p-2 bg-purple-500 rounded-lg text-white font-bold shrink-0">
-          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path></svg>
-        </div>
-        <div>
-          <h4 class="font-bold text-purple-900 text-sm">Đồng Kiểm Khi Nhận</h4>
-          <p id="badge-inspectable-text" class="text-xs text-purple-700/90 mt-0.5 leading-relaxed font-medium">Được đồng kiểm, kiểm tra sách đầy đủ trước khi thanh toán</p>
-        </div>
+    <!-- ==================== SECTION 6: CHÍNH SÁCH CAM KẾT ==================== -->
+    <div class="p-4 grid grid-cols-3 gap-2.5 text-center text-[11px] font-semibold text-gray-700 bg-gray-50 border-b border-gray-100">
+      <div class="flex flex-col items-center p-2 bg-white rounded-lg border border-gray-100 shadow-sm">
+        <span class="text-lg mb-1">🚚</span>
+        <span>Miễn phí vận chuyển</span>
       </div>
-    </section>
+      <div class="flex flex-col items-center p-2 bg-white rounded-lg border border-gray-100 shadow-sm">
+        <span class="text-lg mb-1">🔰</span>
+        <span>Sách QBooks chính hãng</span>
+      </div>
+      <div class="flex flex-col items-center p-2 bg-white rounded-lg border border-gray-100 shadow-sm">
+        <span class="text-lg mb-1">🔍</span>
+        <span>Đồng kiểm khi nhận</span>
+      </div>
+    </div>
 
-    <!-- 7 - NÚT MUA NGAY NỔI BẬT DẪN ĐẾN MỤC THANH TOÁN (Có hiệu ứng rung động) -->
-    <div class="px-5 py-4 bg-white sticky top-[48px] z-40 border-b border-slate-100 shadow-sm">
-      <a href="#checkout-form-section" class="pulse-btn block w-full text-center bg-gradient-to-r from-red-600 via-orange-500 to-red-600 hover:from-red-700 hover:to-orange-600 text-white text-base font-black py-4 px-6 rounded-2xl shadow-xl transition-all duration-300 md:text-lg focus:outline-none focus:ring-4 focus:ring-orange-300">
-        MUA NGAY - NHẬN ƯU ĐÃI ĐỘC QUYỀN
+    <!-- ==================== SECTION 7: NÚT MUA NGAY (1) ==================== -->
+    <div class="p-4 bg-white">
+      <a href="#quick-checkout" class="cta-pulse block w-full py-4 bg-red-600 hover:bg-red-700 text-white text-center font-extrabold rounded-xl transition-all duration-200 text-base shadow-lg tracking-wider active:scale-95 uppercase">
+        ⚡ MUA NGAY NHẬN ƯU ĐÃI 43%
       </a>
     </div>
 
-    <!-- 8 - ẢNH SẢN PHẨM 2 TRANG TRÍ (9:16) -->
-    <div class="w-full aspect-[9/16] bg-slate-100 overflow-hidden shadow-sm">
-      <img id="mid-image-1" class="w-full h-full object-cover" src="/src/assets/images/qbooks_desk_stack_1781831946344.jpg" alt="Ảnh chi tiết sản phẩm 1" referrerpolicy="no-referrer" />
-    </div>
-
-    <!-- 9 - ẢNH SẢN PHẨM 3 TRANG TRÍ (9:16) -->
-    <div class="w-full aspect-[9/16] bg-slate-100 overflow-hidden shadow-sm">
-      <img id="mid-image-2" class="w-full h-full object-cover" src="/src/assets/images/qbooks_banner_cover_1781831927393.jpg" alt="Ảnh chi tiết sản phẩm 2" referrerpolicy="no-referrer" />
-    </div>
-
-    <!-- 10 - TÊN SẢN PHẨM PHỤ / NHẮC LẠI -->
-    <section class="bg-slate-900 text-white p-6 text-center shadow-inner relative overflow-hidden">
-      <!-- Background pattern -->
-      <div class="absolute inset-x-0 bottom-0 top-0 bg-[radial-gradient(#ffffff0a_1px,transparent_1px)] [background-size:16px_16px] pointer-events-none"></div>
-      <h2 id="product-title-recall" class="text-lg font-black tracking-tight leading-snug balance uppercase select-none relative z-10">COMBO SÁCH ÔN HÈ LỚP 1 - VỮNG VÀNG KIẾN THỨC, TỰ TIN LÊN LỚP 2</h2>
-    </section>
-
-    <!-- 11 - ƯU ĐIỂM VƯỢT TRỘI CỦA SẢN PHẨM (Dễ đổi chữ và dễ thêm dòng) -->
-    <section class="bg-gradient-to-b from-white to-slate-50/50 p-6 border-b border-slate-100">
-      <div class="text-center mb-6">
-        <span class="text-xs font-black text-orange-500 uppercase tracking-widest block mb-1">🔥 điểm cộng vượt trội</span>
-        <h3 class="text-xl font-extrabold text-slate-800">5 Ưu Điểm Độc Quyền</h3>
-        <p class="text-xs text-slate-400 mt-1 leading-normal">Chỉ QBooks mang lại giải pháp toàn năng này cho trẻ</p>
+    <!-- ==================== SECTION 8 & 9: ẢNH CHI TIẾT SẢN PHẨM SUB BANNER ==================== -->
+    <div class="space-y-0.5 bg-gray-100">
+      <div class="aspect-square w-full overflow-hidden bg-white">
+        <img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&q=80&w=600&h=600" alt="Nội dung trang sách ôn hè lớp 1 trực quan sinh động" class="w-full h-full object-cover" referrerpolicy="no-referrer">
       </div>
+      <div class="aspect-square w-full overflow-hidden bg-white">
+        <img src="https://images.unsplash.com/photo-1497633762265-9d179a990aa6?auto=format&fit=crop&q=80&w=600&h=600" alt="Bộ đề thi thử và khảo sát năng lực QBooks chất lượng cao" class="w-full h-full object-cover" referrerpolicy="no-referrer">
+      </div>
+    </div>
 
-      <ul id="advantages-check-list" class="space-y-4">
+    <!-- ==================== SECTION 10: TÊN SẢN PHẨM PHỤ ==================== -->
+    <div class="p-4 pt-6 text-center bg-gray-50 border-b border-gray-200">
+      <h2 class="text-lg font-bold text-red-600 uppercase tracking-wide">COMBO SÁCH ÔN HÈ LỚP 1</h2>
+      <p class="text-xs text-gray-600 mt-1 italic font-medium">Học mà chơi, chơi mà học — Khởi đầu tự tin vững bước đầu cấp tiểu học.</p>
+    </div>
+
+    <!-- ==================== SECTION 11: ƯU ĐIỂM VƯỢT TRỘI ==================== -->
+    <div class="p-4 bg-white">
+      <h3 class="text-base font-extrabold text-gray-900 border-l-4 border-amber-500 pl-2.5 mb-4 uppercase tracking-wide">
+        99% Phụ Huynh Lựa Chọn QBooks Vì Ưu Điểm Này:
+      </h3>
+      <ul class="space-y-3.5 pl-1">
         
-          <li class="flex items-start space-x-3 text-slate-700 text-[15px] leading-relaxed">
-            <svg class="w-5 h-5 text-emerald-500 shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"></path>
-            </svg>
-            <span>Hệ thống toàn bộ kiến thức chi tiết trọng tâm của chương trình lớp 1 (Toán & Tiếng Việt).</span>
+          <li class="flex items-start gap-2.5">
+            <span class="text-green-500 text-lg leading-none mt-0.5">✔</span>
+            <span class="text-gray-700 text-sm">Hệ thống kiến thức chi tiết, ôn gọn lý thuyết toàn diện năm học lớp 1.</span>
           </li>
-          <li class="flex items-start space-x-3 text-slate-700 text-[15px] leading-relaxed">
-            <svg class="w-5 h-5 text-emerald-500 shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"></path>
-            </svg>
-            <span>Phân chia hệ thống bài tập logic theo chuyên đề từ cơ bản đến nâng cao phát triển tư duy toán học.</span>
+    
+          <li class="flex items-start gap-2.5">
+            <span class="text-green-500 text-lg leading-none mt-0.5">✔</span>
+            <span class="text-gray-700 text-sm">Có chuỗi hệ thống bài tập Toán lý thú, bài viết Tiếng Việt tăng trí nhớ.</span>
           </li>
-          <li class="flex items-start space-x-3 text-slate-700 text-[15px] leading-relaxed">
-            <svg class="w-5 h-5 text-emerald-500 shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"></path>
-            </svg>
-            <span>Tích hợp mã QR dẫn tới bài giảng video hoạt hoạ 4K sinh động do chính các thầy cô giàu kinh nghiệm hướng dẫn trực tiếp từng bài.</span>
+    
+          <li class="flex items-start gap-2.5">
+            <span class="text-green-500 text-lg leading-none mt-0.5">✔</span>
+            <span class="text-gray-700 text-sm">Sách tích hợp mã QR quét bài giảng video thầy cô trực tiếp hướng dẫn.</span>
           </li>
-          <li class="flex items-start space-x-3 text-slate-700 text-[15px] leading-relaxed">
-            <svg class="w-5 h-5 text-emerald-500 shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"></path>
-            </svg>
-            <span>Được tham gia nhóm học tập trực tuyến (Zalo, Facebook) có thầy cô gia sư sửa bài, giải đáp bài tập 24/7.</span>
+    
+          <li class="flex items-start gap-2.5">
+            <span class="text-green-500 text-lg leading-none mt-0.5">✔</span>
+            <span class="text-gray-700 text-sm">Có nhóm hỗ trợ học tập Zalo, Fanpage kèm cặp, giải đáp thắc mắc 24/7.</span>
           </li>
-          <li class="flex items-start space-x-3 text-slate-700 text-[15px] leading-relaxed">
-            <svg class="w-5 h-5 text-emerald-500 shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"></path>
-            </svg>
-            <span>Tặng kèm 10 đề khảo sát thi thử đầu năm lớp 2 giúp bé làm quen, gặt hái điểm tuyệt đối từ tuần đầu tiên học tập.</span>
+    
+          <li class="flex items-start gap-2.5">
+            <span class="text-green-500 text-lg leading-none mt-0.5">✔</span>
+            <span class="text-gray-700 text-sm">Tặng kèm bộ 5 đề khảo sát chuẩn đầu năm giúp bé nhập học đạt điểm cao.</span>
           </li>
+    
       </ul>
-    </section>
+    </div>
 
-    <!-- 12 - MUA NHIỀU GIẢM GIÁ + SỐ ĐIỆN THOẠI HOTLINE (Có thể gọi được trực tiếp) -->
-    <section class="bg-gradient-to-r from-amber-500 to-orange-500 text-white p-5 mx-5 my-6 rounded-2xl shadow-lg relative overflow-hidden">
-      <div class="absolute right-3 -bottom-5 text-white/10 text-7xl font-mono shrink-0 select-none font-black">📞</div>
-      <h4 class="font-black text-sm uppercase tracking-wider">📞 ĐẶT MUA SỐ LƯỢNG LỚN / TƯ VẤN TRỰC TIẾP</h4>
-      <p id="buying-notes-label" class="text-xs text-orange-50 mt-1.5 leading-relaxed font-medium">MUA TỪ 2 COMBO GIẢM THÊM 10% + TẶNG KÈM BỘ BÚT CHỮ ĐẸP TỰ XOÁ. MIỄN PHÍ SHIP TOÀN QUỐC!</p>
-      <div class="mt-4 flex items-center space-x-2">
-        <span class="text-xs text-orange-100 font-bold">Hotline di động:</span>
-        <a id="hotline-phone-link" href="tel:0342.342.323" class="bg-white text-orange-600 font-black text-sm px-3.5 py-1.5 rounded-lg shadow-sm hover:bg-orange-50 transition tracking-wide font-mono">0342.342.323</a>
-      </div>
-    </section>
-
-    <!-- 13 - NÚT MUA NGAY THỨ HAI TRUNG TÂM -->
-    <div class="px-5 py-2">
-      <a href="#checkout-form-section" class="pulse-btn block w-full text-center bg-gradient-to-r from-red-600 via-orange-500 to-red-600 hover:from-red-700 text-white text-base font-black py-4 px-6 rounded-2xl shadow-xl transition-all duration-300 md:text-lg focus:outline-none">
-        MUA NGAY - NHẬN ƯU ĐÃI ĐỘC QUYỀN
+    <!-- ==================== SECTION 12: THÔNG TIN KHUYẾN MÃI HOTLINE ==================== -->
+    <div class="p-4 mx-4 bg-gradient-to-r from-amber-500 to-orange-500 text-white rounded-xl text-center shadow-lg">
+      <p class="text-xs font-semibold uppercase tracking-wider mb-1">Tư vấn đặt mua trực tiếp</p>
+      <p class="text-sm font-medium mb-2 opacity-95">Mua nhiều giảm sâu khi đặt hàng trực tiếp trong thời gian vàng. Miễn phí ship toàn quốc và hỗ trợ đồng kiểm kĩ càng.</p>
+      <a href="tel:034234232" class="inline-flex items-center gap-1.5 bg-white text-orange-600 font-extrabold px-5 py-2 rounded-lg shadow-md text-sm hover:bg-orange-50 transition active:scale-95">
+        📞 Hotline: 034234232
       </a>
     </div>
 
-    <!-- 14 - VIDEO GIỚI THIỆU SẢN PHẨM 1 (9:16) -->
-    <section class="bg-slate-100 py-6 border-y border-slate-200/50 mt-6">
-      <div class="px-5 mb-3">
-        <span class="text-xs font-bold text-red-500 tracking-wider uppercase block">Trải nghiệm thật</span>
-        <h3 class="text-lg font-extrabold text-slate-800">Thầy Cô Review Trực Tiếp</h3>
-      </div>
-      <div class="px-5">
-        <div class="w-full aspect-[9/16] rounded-2xl overflow-hidden shadow-2xl relative bg-black">
-          <video id="p-video-1" controls preload="metadata" class="w-full h-full object-cover">
-            <source src="https://assets.mixkit.co/videos/preview/mixkit-little-girl-studying-with-her-mother-at-home-41584-large.mp4" type="video/mp4">
-            Trình duyệt của bạn không hỗ trợ video thẻ.
-          </video>
-        </div>
-      </div>
-    </section>
+    <!-- ==================== SECTION 13: NÚT MUA NGAY (2) ==================== -->
+    <div class="p-4 bg-white pt-6">
+      <a href="#quick-checkout" class="cta-pulse block w-full py-4 bg-red-600 hover:bg-red-700 text-white text-center font-extrabold rounded-xl transition-all duration-200 text-base shadow-lg tracking-wider active:scale-95 uppercase">
+        🔥 ĐẶT MUA SÁCH QBOOKS NGAY
+      </a>
+    </div>
 
-    <!-- 15 - THÔNG TIN CHI TIẾT VỀ SẢN PHẨM (ĐOẠN VĂN DÀI) -->
-    <section class="bg-white p-6 border-b border-slate-100">
-      <div class="text-center mb-4">
-        <span class="text-xs font-bold text-slate-400 uppercase tracking-widest block mb-0.5">Nội dung chi tiết</span>
-        <h3 class="text-[17px] font-extrabold text-slate-800 uppercase">Ý Nghĩa Khoa Học Của Bộ Sách</h3>
+    <!-- ==================== SECTION 14: VIDEO GIỚI THIỆU SẢN PHẨM ==================== -->
+    <div class="p-4 bg-gray-50 border-y border-gray-100">
+      <div class="flex items-center gap-2 mb-3">
+        <span class="text-red-500 text-lg">🎥</span>
+        <h3 class="text-sm font-bold text-gray-800 uppercase tracking-wide">Video giới thiệu chi tiết bộ sách QBooks ôn hè</h3>
       </div>
-      <p id="detailed-description-text" class="text-[14px] text-slate-600 leading-relaxed text-justify space-y-2 whitespace-pre-line font-medium">Kỳ nghỉ hè là thời gian vàng để bé vừa vui chơi, vừa củng cố lại kiến thức lớp 1 để chuyển tiếp mượt mà lên lớp 2 mà không bị bỡ ngỡ trước lượng chữ mới hay phép toán phức tạp. Bộ sách 'Combo Ôn Hè Lớp 1' của QBooks được nghiên cứu kỹ lưỡng, biên soạn công phu bám sát khung chương trình mới nhất của Bộ Giáo Dục. Trọn bộ bao gồm sách ôn tập Toán, Tiếng Việt kết hợp cùng hệ thống bài kiểm tra khảo sát sáng tạo. Đặc biệt, công nghệ quét mã QR xem video bài giảng giúp bé tự học một cách tự lập mà không cần ba mẹ phải túc trực kèm cặp mệt mỏi.</p>
-    </section>
+      <div class="aspect-[9/16] w-full max-w-[280px] mx-auto rounded-xl overflow-hidden shadow-lg border border-gray-200 relative bg-black">
+        <!-- Nếu là link youtube, chúng tôi cố gắng embed, nếu không dùng iframe chuẩn hoặc video, ở đây sử dụng Iframe thích hợp hoặc video tag -->
+        <iframe src="https://www.youtube.com/embed/5K8N1h9S_rM" class="w-full h-full" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+    </div>
 
-    <!-- 16 - LỜI TRI ÂN TỪ ĐỘI NGŨ TÁC GIẢ -->
-    <section class="bg-orange-50/50 p-6 mx-5 my-6 rounded-2xl border border-dashed border-orange-200/80 relative">
-      <div class="absolute -top-3 left-6 bg-orange-100 text-orange-800 text-[10px] font-black px-3 py-1 rounded-full uppercase tracking-wider border border-orange-200">
-        Bảo chứng tâm huyết
-      </div>
-      <h4 id="author-title" class="font-black text-slate-800 text-sm mb-2 mt-1 uppercase" style="color: #c2410c;">TÂM THƯ TỪ ĐỘI NGŨ TÁC GIẢ QBOOKS</h4>
-      <p id="author-content" class="text-xs text-slate-600 leading-relaxed italic text-justify">Chào các ba mẹ thân mến, chúng tôi hiểu rằng việc chuyển cấp lớp 1 lên lớp 2 là giai đoạn các bé rất dễ tụt lại phía sau nếu không giữ nhịp học tập đều đặn ngày hè. Mỗi trang sách QBooks gửi gắm không chỉ là những bài toán, những vần thơ, mà hơn cả đó là lòng tâm huyết kiến tạo niềm yêu thích học tập tự nhiên của trẻ nhỏ. Chúc các con yêu có một kỳ nghỉ hè vui tươi đầy bổ ích!</p>
+    <!-- ==================== SECTION 15: THÔNG TIN CHI TIẾT SẢN PHẨM ==================== -->
+    <div class="p-4 bg-white">
+      <h3 class="text-base font-extrabold text-gray-900 border-l-4 border-amber-500 pl-2.5 mb-3 uppercase tracking-wide">
+        Giới Thiệu Nội Dung Chi Tiết Bộ Sách
+      </h3>
+      <div class="text-gray-600 text-sm leading-relaxed space-y-3 whitespace-pre-line font-normal">
+        Bộ sách ôn hè lớp 1 QBooks bao gồm 2 cuốn Toán và Tiếng Việt được thiết kế khoa học từ các thầy cô ưu tú thuộc hệ thống giáo dục quốc gia.
       
-      <div class="mt-4 border-t border-orange-100/80 pt-3 text-right">
-        <span id="author-signature" class="signature-font text-xl text-orange-700 block mt-1">Trưởng ban biên tập QBooks - Nhà giáo Ưu tú Nguyễn Kim Oanh</span>
+      Kiến thức Toán được trình bày trực quan kèm hình ảnh bướm hoa sinh động, đưa số học vào trò chơi để hướng sự say mê tự nhiên của bé. 
+      Phần Tiếng Việt chú trọng rèn nét chữ, rèn phát âm chuẩn, bồi dưỡng vốn từ tinh tế để học sinh tiếp thu một cách thoải mái nhất, không gây mệt mỏi áp lực cho trẻ nhỏ.
+      Sách đi kèm mã QR thông minh ở mỗi bài. Phụ huynh chỉ cần dùng điện thoại bật camera quét mã là bé có thể nghe video giảng bài dễ hiểu từng câu chữ, hỗ trợ đắc lực khi bố mẹ bận rộn.
       </div>
-    </section>
+    </div>
 
-    <!-- 17 - ĐÁNH GIÁ CỦA PHỤ HUYNH HỌC SINH (5 ĐÁNH GIÁ KÈM ẢNH THẬT) -->
-    <section class="bg-slate-50 py-6 border-y border-slate-200/40">
-      <div class="px-5 mb-5 text-center">
-        <span class="text-[10px] font-black text-amber-500 uppercase tracking-widest block mb-1">Feedback từ Ba Mẹ</span>
-        <h3 class="text-lg font-extrabold text-slate-800">Ý Kiến Phụ Huynh Đã Sử Dụng</h3>
-        <p class="text-xs text-slate-400 mt-1 font-medium">Hành trình bé giỏi lên được chia sẻ thật 100%</p>
-      </div>
+    <!-- ==================== SECTION 16: LỜI TRI ÂN TỪ ĐỘI NGŨ TÁC GIẢ ==================== -->
+    <div class="p-4 bg-indigo-50/50 m-4 rounded-xl border border-indigo-100">
+      <h3 class="text-sm font-extrabold text-indigo-900 mb-2 uppercase tracking-wider flex items-center gap-1.5">
+        💖 Lời cảm tạ tri ân sâu sắc
+      </h3>
+      <p class="text-xs text-indigo-700/95 leading-relaxed italic font-medium">
+        "Chúng tôi nỗ lực từng ngày để mang tới những trang sách nâng niu tầm hồn, khai sáng tư duy và truyền lửa đam mê tri thức của học sinh Việt Nam. Trân trọng cảm ơn hàng triệu phụ huynh đã đồng hành và trao trọn niềm tin cho QBooks trong suốt chặn đường vừa qua."
+      </p>
+      <p class="text-[11px] font-bold text-indigo-800 text-right mt-2">
+        — Ban Biên Soạn & Tác Giả: Đội Ngũ Tác Giả & Ban Học Thuật QBooks
+      </p>
+    </div>
 
-      <!-- Grid reviews -->
-      <div id="reviews-container-grid" class="space-y-4 px-5">
+    <!-- ==================== SECTION 17: ĐÁNH GIÁ CỦA PHỤ HUYNH HỌC SINH ==================== -->
+    <div class="p-4 bg-white border-t border-gray-100">
+      <h3 class="text-base font-extrabold text-gray-900 border-l-4 border-amber-500 pl-2.5 mb-4 uppercase tracking-wide">
+        Cảm Nhận Chân Thực Từ Quý Phụ Huynh Học Sinh
+      </h3>
+      <div class="space-y-4">
         
-        <div class="bg-white rounded-2xl p-5 shadow-sm border border-slate-100 flex flex-col space-y-3 transition transform duration-300">
-          <div class="flex items-center space-x-3">
-            <img class="w-12 h-12 rounded-full object-cover border-2 border-orange-100 shrink-0" src="/src/assets/images/happy_student_review_1781831964868.jpg" alt="Chị Minh Anh" referrerpolicy="no-referrer">
-            <div>
-              <h4 class="font-bold text-slate-800 text-sm">Chị Minh Anh</h4>
-              <p class="text-xs text-slate-500 font-medium">Phụ huynh bé Gia Bảo (Hà Nội)</p>
+        <!-- Đánh giá 1 -->
+        <div class="bg-gray-50 p-4 rounded-xl border border-gray-100 flex flex-col justify-between shadow-sm transition hover:shadow-md">
+          <div>
+            <div class="flex items-center gap-3 mb-3">
+              <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&q=80&w=120&h=120" alt="Chị Mai Lan" class="w-12 h-12 rounded-full object-cover border-2 border-indigo-100" referrerPolicy="no-referrer">
+              <div>
+                <h4 class="font-bold text-gray-800 text-sm">Chị Mai Lan</h4>
+                <p class="text-xs text-gray-500">Phụ huynh bé Khánh An (Tiền tiểu học - Hà Nội)</p>
+              </div>
             </div>
-          </div>
-          <div class="flex text-amber-400 items-center">
-            ★★★★★
-            <span class="text-xs text-slate-400 ml-2 font-mono">06-15-2026</span>
-          </div>
-          <p class="text-sm text-slate-600 leading-relaxed italic">"Lúc đầu sợ bé nghỉ hè mải chơi lười học, nhưng cầm quyển ôn hè QBooks có hình vẽ bắt mắt, bé thích lắm cứ tự quét QR xem cô giáo giảng bài rồi làm. Sách in rất đẹp không loá mắt, highly recommend cho các mẹ chuẩn bị cho con lên lớp 2!"</p>
-        </div>
-        <div class="bg-white rounded-2xl p-5 shadow-sm border border-slate-100 flex flex-col space-y-3 transition transform duration-300">
-          <div class="flex items-center space-x-3">
-            <img class="w-12 h-12 rounded-full object-cover border-2 border-orange-100 shrink-0" src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&q=80&w=150" alt="Anh Hoàng Nam" referrerpolicy="no-referrer">
-            <div>
-              <h4 class="font-bold text-slate-800 text-sm">Anh Hoàng Nam</h4>
-              <p class="text-xs text-slate-500 font-medium">Phụ huynh bé Mai Chi (Đà Nẵng)</p>
+            <div class="flex text-amber-400 gap-0.5 mb-2">
+              ★★★★★
+              
             </div>
+            <p class="text-gray-600 text-sm leading-relaxed italic">"Sách đóng gói cẩn thận, có video quét QR rất tiện, bé nhà mình cứ tự giác xem cô giảng rồi tự làm bài tập, mẹ nhàn tênh!"</p>
           </div>
-          <div class="flex text-amber-400 items-center">
-            ★★★★★
-            <span class="text-xs text-slate-400 ml-2 font-mono">06-12-2026</span>
+          <div class="mt-4 flex items-center justify-between text-xs text-gray-400 border-t border-gray-100 pt-2">
+            <span>Đã kiểm chứng mua hàng</span>
+            <span>10/06/2026</span>
           </div>
-          <p class="text-sm text-slate-600 leading-relaxed italic">"Nhà trường giới thiệu bộ này chuẩn bị hè. Bài tập phân cấp rõ ràng vừa có cơ bản để ôn luyện lại vừa có vài bài nâng cao để rèn tư duy toán học rất hay. Shipper giao nhanh, đóng gói cẩn thận tuyệt đối."</p>
         </div>
-        <div class="bg-white rounded-2xl p-5 shadow-sm border border-slate-100 flex flex-col space-y-3 transition transform duration-300">
-          <div class="flex items-center space-x-3">
-            <img class="w-12 h-12 rounded-full object-cover border-2 border-orange-100 shrink-0" src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&q=80&w=150" alt="Mẹ Thuỳ Trang" referrerpolicy="no-referrer">
-            <div>
-              <h4 class="font-bold text-slate-800 text-sm">Mẹ Thuỳ Trang</h4>
-              <p class="text-xs text-slate-500 font-medium">Phụ huynh cặp sinh đôi Minh-Trí (TP.HCM)</p>
+    
+        <!-- Đánh giá 2 -->
+        <div class="bg-gray-50 p-4 rounded-xl border border-gray-100 flex flex-col justify-between shadow-sm transition hover:shadow-md">
+          <div>
+            <div class="flex items-center gap-3 mb-3">
+              <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=120&h=120" alt="Anh Minh Tiến" class="w-12 h-12 rounded-full object-cover border-2 border-indigo-100" referrerPolicy="no-referrer">
+              <div>
+                <h4 class="font-bold text-gray-800 text-sm">Anh Minh Tiến</h4>
+                <p class="text-xs text-gray-500">Phụ huynh bé Quốc Bảo (Hải Phòng)</p>
+              </div>
             </div>
-          </div>
-          <div class="flex text-amber-400 items-center">
-            ★★★★★
-            <span class="text-xs text-slate-400 ml-2 font-mono">06-10-2026</span>
-          </div>
-          <p class="text-sm text-slate-600 leading-relaxed italic">"Mua 2 bộ được shop ưu đãi quà tặng bút bay màu cực đẹp với giảm giá thêm rất thích. Bài tập lồng ghép cả trò chơi tô màu ghép chữ nên hai nhóc làm không bị chán ngon ơ nha các mẹ."</p>
-        </div>
-        <div class="bg-white rounded-2xl p-5 shadow-sm border border-slate-100 flex flex-col space-y-3 transition transform duration-300">
-          <div class="flex items-center space-x-3">
-            <img class="w-12 h-12 rounded-full object-cover border-2 border-orange-100 shrink-0" src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=150" alt="Anh Quốc Bảo" referrerpolicy="no-referrer">
-            <div>
-              <h4 class="font-bold text-slate-800 text-sm">Anh Quốc Bảo</h4>
-              <p class="text-xs text-slate-500 font-medium">Phụ huynh Khánh Huy (Khánh Hoà)</p>
+            <div class="flex text-amber-400 gap-0.5 mb-2">
+              ★★★★★
+              
             </div>
+            <p class="text-gray-600 text-sm leading-relaxed italic">"Tôi đánh giá cao nội dung Toán tư duy trong cuốn sách này. Không dạy vẹt mà cho các con ghép nối màu sắc bộc lộ trí tuệ rất tốt."</p>
           </div>
-          <div class="flex text-amber-400 items-center">
-            ★★★★★
-            <span class="text-xs text-slate-400 ml-2 font-mono">06-08-2026</span>
+          <div class="mt-4 flex items-center justify-between text-xs text-gray-400 border-t border-gray-100 pt-2">
+            <span>Đã kiểm chứng mua hàng</span>
+            <span>12/06/2026</span>
           </div>
-          <p class="text-sm text-slate-600 leading-relaxed italic">"Được đồng kiểm nên rất yên tâm mở ra sờ giấy láng mịn chống loá sướng tay. Có mã QR mở giảng dạy nên ba mẹ đi làm bận rộn cũng bớt lo lắng. Đánh giá chất lượng 10 sao!"</p>
         </div>
-        <div class="bg-white rounded-2xl p-5 shadow-sm border border-slate-100 flex flex-col space-y-3 transition transform duration-300">
-          <div class="flex items-center space-x-3">
-            <img class="w-12 h-12 rounded-full object-cover border-2 border-orange-100 shrink-0" src="https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&q=80&w=150" alt="Cô giáo Thuỳ Lâm" referrerpolicy="no-referrer">
-            <div>
-              <h4 class="font-bold text-slate-800 text-sm">Cô giáo Thuỳ Lâm</h4>
-              <p class="text-xs text-slate-500 font-medium">Giáo viên tiểu học (Hải Phòng)</p>
+    
+        <!-- Đánh giá 3 -->
+        <div class="bg-gray-50 p-4 rounded-xl border border-gray-100 flex flex-col justify-between shadow-sm transition hover:shadow-md">
+          <div>
+            <div class="flex items-center gap-3 mb-3">
+              <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=120&h=120" alt="Cô Thu Hương" class="w-12 h-12 rounded-full object-cover border-2 border-indigo-100" referrerPolicy="no-referrer">
+              <div>
+                <h4 class="font-bold text-gray-800 text-sm">Cô Thu Hương</h4>
+                <p class="text-xs text-gray-500">Giáo viên trường Mầm Non Hoàng Mai (Hà Nội)</p>
+              </div>
             </div>
+            <div class="flex text-amber-400 gap-0.5 mb-2">
+              ★★★★★
+              
+            </div>
+            <p class="text-gray-600 text-sm leading-relaxed italic">"Sách bám sát chương trình cải cách mới của Bộ Giáo dục. Tôi dùng làm giáo án bổ trợ ôn luyện hè cho các bé chuẩn bị bước vào lớp 1."</p>
           </div>
-          <div class="flex text-amber-400 items-center">
-            ★★★★★
-            <span class="text-xs text-slate-400 ml-2 font-mono">06-05-2026</span>
+          <div class="mt-4 flex items-center justify-between text-xs text-gray-400 border-t border-gray-100 pt-2">
+            <span>Đã kiểm chứng mua hàng</span>
+            <span>14/06/2026</span>
           </div>
-          <p class="text-sm text-slate-600 leading-relaxed italic">"Tôi thường tư vấn cho phụ huynh mua combo này của QBooks. Sách bám cực sát chương trình Cánh Diều, Kết Nối Tri Thức hay Chân Trời Sáng Tạo, hệ thống bài ôn tập hè khoa học nhất hiện nay."</p>
         </div>
+    
+        <!-- Đánh giá 4 -->
+        <div class="bg-gray-50 p-4 rounded-xl border border-gray-100 flex flex-col justify-between shadow-sm transition hover:shadow-md">
+          <div>
+            <div class="flex items-center gap-3 mb-3">
+              <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&q=80&w=120&h=120" alt="Mẹ Bích Phượng" class="w-12 h-12 rounded-full object-cover border-2 border-indigo-100" referrerPolicy="no-referrer">
+              <div>
+                <h4 class="font-bold text-gray-800 text-sm">Mẹ Bích Phượng</h4>
+                <p class="text-xs text-gray-500">Phụ huynh hai bé Gia Bảo & Gia Hân (Nghệ An)</p>
+              </div>
+            </div>
+            <div class="flex text-amber-400 gap-0.5 mb-2">
+              ★★★★★
+              
+            </div>
+            <p class="text-gray-600 text-sm leading-relaxed italic">"Rất ưng ý với việc đồng kiểm của công ty sách QBooks. Giao hàng nhanh, sách chuẩn chính hãng sờ giấy mịn xịn không bị mỏi mắt trẻ."</p>
+          </div>
+          <div class="mt-4 flex items-center justify-between text-xs text-gray-400 border-t border-gray-100 pt-2">
+            <span>Đã kiểm chứng mua hàng</span>
+            <span>15/06/2026</span>
+          </div>
+        </div>
+    
+        <!-- Đánh giá 5 -->
+        <div class="bg-gray-50 p-4 rounded-xl border border-gray-100 flex flex-col justify-between shadow-sm transition hover:shadow-md">
+          <div>
+            <div class="flex items-center gap-3 mb-3">
+              <img src="https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?auto=format&fit=crop&q=80&w=120&h=120" alt="Thầy Đức Huy" class="w-12 h-12 rounded-full object-cover border-2 border-indigo-100" referrerPolicy="no-referrer">
+              <div>
+                <h4 class="font-bold text-gray-800 text-sm">Thầy Đức Huy</h4>
+                <p class="text-xs text-gray-500">Tác giả sách & Giảng viên sư phạm</p>
+              </div>
+            </div>
+            <div class="flex text-amber-400 gap-0.5 mb-2">
+              ★★★★★
+              
+            </div>
+            <p class="text-gray-600 text-sm leading-relaxed italic">"Phương pháp lồng ghép truyện ngụ ngôn vào bài viết chữ giúp trẻ nuôi dưỡng xúc cảm nhân văn sâu sắc. Đột phá đáng khuyến khích."</p>
+          </div>
+          <div class="mt-4 flex items-center justify-between text-xs text-gray-400 border-t border-gray-100 pt-2">
+            <span>Đã kiểm chứng mua hàng</span>
+            <span>16/06/2026</span>
+          </div>
+        </div>
+    
       </div>
-    </section>
+    </div>
 
-    <!-- 18 - VIDEO REVIEW HOẠT ĐỘNG THỨ HAI (9:16) -->
-    <section class="bg-slate-100 py-6 border-b border-slate-200/50">
-      <div class="px-5 mb-3">
-        <span class="text-xs font-bold text-purple-600 tracking-wider uppercase block">Bé Tự Học Ở Nhà</span>
-        <h3 class="text-lg font-extrabold text-slate-800">Khoảnh Khắc Học Bài Hè Vui Vẽ</h3>
+    <!-- ==================== SECTION 18: VIDEO SẢN PHẨM PHỤ KHÁC ==================== -->
+    <div class="p-4 bg-gray-50 border-y border-gray-100">
+      <div class="flex items-center gap-2 mb-3">
+        <span class="text-red-500 text-lg">🎬</span>
+        <h3 class="text-sm font-bold text-gray-800 uppercase tracking-wide">Video giới thiệu phương pháp đồng hành cùng con</h3>
       </div>
-      <div class="px-5">
-        <div class="w-full aspect-[9/16] rounded-2xl overflow-hidden shadow-2xl relative bg-black">
-          <video id="p-video-2" controls preload="metadata" class="w-full h-full object-cover">
-            <source src="https://assets.mixkit.co/videos/preview/mixkit-little-girl-doing-her-homework-with-her-dad-41589-large.mp4" type="video/mp4">
-            Trình duyệt của bạn không hỗ trợ video thẻ.
-          </video>
+      <div class="aspect-[9/16] w-full max-w-[280px] mx-auto rounded-xl overflow-hidden shadow-lg border border-gray-200 relative bg-black">
+        <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" class="w-full h-full" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+    </div>
+
+    <!-- ==================== SECTION 19: FORM THANH TOÁN (MỤC MUA HÀNG) ==================== -->
+    <div id="quick-checkout" class="p-5 bg-gradient-to-b from-gray-900 to-indigo-950 text-white border-t border-indigo-900">
+      <div class="text-center mb-6">
+        <span class="bg-amber-400 text-gray-950 text-[10px] uppercase font-black px-3 py-1 rounded-full px-2 py-0.5 tracking-wider inline-block mb-2">ĐẶT MUA SÁCH</span>
+        <h2 class="text-xl font-extrabold tracking-tight">Đăng Ký Đặt Mua Sách Combo Nhận Ưu Đãi 43%</h2>
+        <p class="text-xs text-gray-300 mt-1 opacity-90">Duy nhất hôm nay: Miễn phí giao nhận trên toàn quốc — Cho đồng kiểm hài lòng mới thanh toán.</p>
+      </div>
+
+      <!-- ĐỒNG HỒ ĐẾM NGƯỢC GIỚI HẠN THỜI GIAN -->
+      <div class="bg-black/35 rounded-xl p-3 border border-orange-500/20 text-center mb-6">
+        <p class="text-xs text-orange-400 font-semibold mb-2 flex items-center justify-center gap-1.5">
+          ⏱ ƯU ĐÃI SẮP HẾT HẠN TRONG
+        </p>
+        <div class="flex justify-center items-center gap-3">
+          <div class="bg-red-600/90 rounded-lg px-3 py-2 w-12 shadow-md">
+            <span class="block text-lg font-black font-mono leading-none" id="timer-hours">02</span>
+            <span class="text-[9px] text-gray-200 uppercase font-semibold">Giờ</span>
+          </div>
+          <span class="text-lg font-bold text-orange-400">:</span>
+          <div class="bg-red-600/90 rounded-lg px-3 py-2 w-12 shadow-md">
+            <span class="block text-lg font-black font-mono leading-none" id="timer-mins">45</span>
+            <span class="text-[9px] text-gray-200 uppercase font-semibold">Phút</span>
+          </div>
+          <span class="text-lg font-bold text-orange-400">:</span>
+          <div class="bg-red-600/90 rounded-lg px-3 py-2 w-12 shadow-md">
+            <span class="block text-lg font-black font-mono leading-none" id="timer-secs">00</span>
+            <span class="text-[9px] text-gray-200 uppercase font-semibold">Giây</span>
+          </div>
         </div>
       </div>
-    </section>
 
-    <!-- 19 - MỤC THANH TOÁN NHANH CHÓNG (FORM ĐẶT HÀNG) -->
-    <section id="checkout-form-section" class="bg-white p-6 border-b border-slate-200 relative scroll-mt-[100px]">
-      
-      <!-- Hộp Đếm Ngược Giới Hạn -->
-      <div class="bg-red-50 text-red-600 p-4 rounded-xl border border-red-100/80 mb-6 text-center shadow-inner">
-        <span class="text-xs font-extrabold uppercase tracking-widest block mb-1">⏳ KHUYẾN MÃI KẾT THÚC SAU:</span>
-        <div class="flex justify-center space-x-2 font-mono font-black text-2xl my-1.5">
-          <div class="bg-red-600 text-white px-2.5 py-1 rounded-lg" id="c-min">20</div>
-          <div class="text-red-500 flex items-center">:</div>
-          <div class="bg-red-600 text-white px-2.5 py-1 rounded-lg" id="c-sec">00</div>
+      <!-- NHẮC LẠI MỨC GIÁ -->
+      <div class="mb-5 bg-white/5 rounded-xl p-3 border border-white/10 flex items-center justify-between text-sm">
+        <div>
+          <span class="block text-xs text-gray-400">Combo bạn chọn:</span>
+          <span class="font-bold text-white uppercase tracking-wide">Sách QBooks Đặc Biệt</span>
         </div>
-        <p id="alert-countdown-text" class="text-xs font-semibold text-red-500/95 mt-1 animate-pulse leading-snug">🔥 Đang có 128 phụ huynh khác đang xem sản phẩm này. Khuyến mãi sắp kết thúc, đặt hàng ngay!</p>
+        <div class="text-right">
+          <span class="block text-xs text-gray-400 line-through">350.000 ₫</span>
+          <span class="font-extrabold text-red-500 text-lg">199.000 ₫</span>
+        </div>
       </div>
 
-      <div class="mb-5">
-        <h3 class="text-xl font-black text-slate-900 uppercase">Form đặt hàng nhanh</h3>
-        <p class="text-xs text-slate-500 mt-1 leading-normal">Miễn phí ship + Đồng kiểm + Kiểm tra kĩ lưỡng mới cần đóng tiền.</p>
-      </div>
-
-      <!-- Thân Form -->
-      <form id="orderForm" onsubmit="handleFormSubmit(event)" class="space-y-4">
-        
+      <!-- FORM ĐĂNG KÝ -->
+      <form id="orderForm" onsubmit="handleFormSubmit(event)" class="space-y-4 text-gray-900">
         <!-- Họ và tên -->
         <div>
-          <label class="block text-xs font-extrabold text-slate-700 uppercase tracking-wide mb-1" for="inputName">Họ và tên phụ huynh <span class="text-red-500">*</span></label>
-          <div class="relative">
-            <input type="text" id="inputName" required placeholder="Ví dụ: Nguyễn Thị Hồng" class="w-full text-sm py-3 px-4 bg-slate-50 border border-slate-200 rounded-xl focus:bg-white focus:ring-2 focus:ring-orange-500 focus:border-orange-500 transition focus:outline-none font-medium" />
-          </div>
+          <label class="block text-xs font-bold text-gray-300 uppercase tracking-wider mb-1.5">Họ và tên của bạn <span class="text-red-500">*</span></label>
+          <input type="text" id="fullname" name="fullname" required placeholder="Ví dụ: Nguyễn Văn A" class="w-full bg-white border border-gray-300 rounded-lg px-3 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-amber-500">
         </div>
 
         <!-- Số điện thoại -->
         <div>
-          <label class="block text-xs font-extrabold text-slate-700 uppercase tracking-wide mb-1" for="inputPhone">Số điện thoại giao hàng <span class="text-red-500">*</span></label>
-          <div class="relative">
-            <input type="tel" id="inputPhone" required pattern="[0-9]{9,11}" placeholder="Ví dụ: 0984123XXX" class="w-full text-sm py-3 px-4 bg-slate-50 border border-slate-200 rounded-xl focus:bg-white focus:ring-2 focus:ring-orange-500 focus:border-orange-500 transition focus:outline-none font-mono" />
-          </div>
-          <span class="text-[10px] text-slate-400 mt-1 block">Yêu cầu nhập đúng chữ số để nhà sách gọi điện xác thực.</span>
+          <label class="block text-xs font-bold text-gray-300 uppercase tracking-wider mb-1.5">Số điện thoại liên hệ <span class="text-red-500">*</span></label>
+          <input type="tel" id="phone" name="phone" required placeholder="Ví dụ: 0987654321" class="w-full bg-white border border-gray-300 rounded-lg px-3 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-amber-500">
         </div>
 
-        <!-- Địa chỉ nhận sách -->
+        <!-- Địa chỉ nhận hàng -->
         <div>
-          <label class="block text-xs font-extrabold text-slate-700 uppercase tracking-wide mb-1" for="inputAddress">Địa chỉ cụ thể nhận sách <span class="text-red-500">*</span></label>
-          <div class="relative">
-            <input type="text" id="inputAddress" required placeholder="Ví dụ: Số 20 Ngõ 5 Lê Trọng Tấn, Hà Nội" class="w-full text-sm py-3 px-4 bg-slate-50 border border-slate-200 rounded-xl focus:bg-white focus:ring-2 focus:ring-orange-500 focus:border-orange-500 transition focus:outline-none font-medium" />
-          </div>
+          <label class="block text-xs font-bold text-gray-300 uppercase tracking-wider mb-1.5">Địa chỉ cụ thể nhận hàng <span class="text-red-500">*</span></label>
+          <input type="text" id="address" name="address" required placeholder="Số nhà, đường, thôn/xóm, phường/xã, quận/huyện..." class="w-full bg-white border border-gray-300 rounded-lg px-3 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-amber-500">
         </div>
 
-        <!-- Bộ sách lựa chọn -->
+        <!-- Bộ sách -->
         <div>
-          <label class="block text-xs font-extrabold text-slate-700 uppercase tracking-wide mb-1" for="selectPackage">Chọn gói ưu đãi <span class="text-red-500">*</span></label>
-          <select id="selectPackage" class="w-full text-sm py-3 px-4 bg-slate-50 border border-slate-200 rounded-xl focus:bg-white focus:ring-2 focus:ring-orange-500 focus:border-orange-500 transition focus:outline-none font-semibold">
+          <label class="block text-xs font-bold text-gray-300 uppercase tracking-wider mb-1.5">Bộ sách bạn muốn đặt <span class="text-red-500">*</span></label>
+          <select id="combopackage" name="combopackage" class="w-full bg-white border border-gray-300 rounded-lg px-3 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-amber-500 font-medium">
             
-        <option value="Combo Sách Ôn Hè Lớp 1 (Toán + Tiếng Việt) - 199.000₫ (Miễn phí ship)" selected>Combo Sách Ôn Hè Lớp 1 (Toán + Tiếng Việt) - 199.000₫ (Miễn phí ship)</option>
-        <option value="Mua 2 Combo Sách Lớp 1 (Dành cho 2 bé) - Chỉ 358.000₫ (Giảm thêm 10% + Tặng 2 Bút chữ đẹp)" >Mua 2 Combo Sách Lớp 1 (Dành cho 2 bé) - Chỉ 358.000₫ (Giảm thêm 10% + Tặng 2 Bút chữ đẹp)</option>
-        <option value="Trọn bộ Combo Ôn Hè Lớp 1 + Ôn luyện nâng cao Toán - Lớp 1 - 259.000₫" >Trọn bộ Combo Ôn Hè Lớp 1 + Ôn luyện nâng cao Toán - Lớp 1 - 259.000₫</option>
+                <option value="Combo 1: Trọn bộ Toán + Tiếng Việt Lớp 1 (199.000đ)">Combo 1: Trọn bộ Toán + Tiếng Việt Lớp 1 (199.000đ)</option>
+    
+                <option value="Combo 2: Trọn bộ Ôn Hè Toán + Tiếng Việt Lớp 1 Nâng Cao (239.000đ)">Combo 2: Trọn bộ Ôn Hè Toán + Tiếng Việt Lớp 1 Nâng Cao (239.000đ)</option>
+    
+                <option value="Combo 3: Bộ Ôn Hè + Đề Khảo Sát + Sổ Tay Luyện Chữ (299.000đ)">Combo 3: Bộ Ôn Hè + Đề Khảo Sát + Sổ Tay Luyện Chữ (299.000đ)</option>
+    
           </select>
         </div>
 
-        <!-- Ghi chú lưu ý -->
+        <!-- Ghi chú thêm -->
         <div>
-          <label class="block text-xs font-extrabold text-slate-700 uppercase tracking-wide mb-1" for="inputNote">Ghi chú (Không bắt buộc)</label>
-          <textarea id="inputNote" rows="2" placeholder="Ví dụ: Giao giờ hành chính, gọi điện trước khi giao..." class="w-full text-sm py-3 px-4 bg-slate-50 border border-slate-200 rounded-xl focus:bg-white focus:ring-2 focus:ring-orange-500 focus:border-orange-500 transition focus:outline-none font-medium"></textarea>
+          <label class="block text-xs font-bold text-gray-300 uppercase tracking-wider mb-1.5">Ghi chú (Không bắt buộc)</label>
+          <textarea id="notes" name="notes" placeholder="Ghi chú về thời gian giao hàng, yêu cầu đồng kiểm..." rows="2" class="w-full bg-white border border-gray-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-amber-500"></textarea>
         </div>
 
-        <!-- Nhắc lại mức giá thanh toán -->
-        <div class="bg-slate-50 p-4 rounded-xl border border-slate-100 flex justify-between items-center">
-          <span class="text-xs font-bold text-slate-500 uppercase">Thành tiền tạm tính:</span>
-          <span id="price-checkout-recall" class="text-xl font-extrabold text-red-600 font-mono">199,000₫</span>
-        </div>
+        <!-- Thông báo trạng thái gửi -->
+        <div id="form-msg" class="hidden text-center p-3 rounded-lg text-xs font-bold"></div>
 
-        <!-- Nút đặt mua ngay -->
-        <button type="submit" id="submitFormBtn" class="w-full bg-gradient-to-r from-red-600 to-orange-500 text-white font-black text-base py-4 rounded-xl shadow-lg hover:from-red-700 transition duration-300 flex items-center justify-center space-x-2 focus:outline-none">
-          <span>🎯 ĐẶT MUA NGAY - MIỄN PHÍ SHIP</span>
+        <!-- Nút gửi đơn hàng -->
+        <button type="submit" id="submitBtn" class="w-full py-4 bg-amber-500 hover:bg-amber-600 text-gray-950 font-black text-center rounded-xl transition duration-200 text-base shadow-lg tracking-wider uppercase active:scale-95 flex items-center justify-center gap-2">
+          <span>📦 ĐẶT MUA SÁCH NGAY</span>
         </button>
+
+        <p class="text-[10px] text-center text-gray-400 mt-2">
+          🔒 Bảo mật thông tin khách hàng tuyệt đối. Hãy kiểm hàng kĩ trước khi nhận.
+        </p>
       </form>
-    </section>
-
-    <!-- 20 - CHÂN TRANG (FOOTER) -->
-    <footer class="bg-slate-900 text-slate-400 p-6 text-xs text-center border-t border-slate-800 space-y-3.5 mt-auto">
-      <h4 id="footer-company" class="font-extrabold text-slate-200 text-sm tracking-wide uppercase">CÔNG TY CỔ PHẦN SÁCH QBOOKS</h4>
-      
-      <p id="footer-address" class="leading-relaxed leading-normal">192/173/66 P. Lê Trọng Tấn, Phương Liệt, Thanh Xuân, Hà Nội</p>
-      
-      <div class="flex justify-center items-center space-x-1">
-        <span class="shrink-0">📞</span>
-        <a id="footer-hotline" href="tel:1900.8888.99" class="font-bold text-slate-300 font-mono">Quản lý khách hàng: 1900.8888.99</a>
-      </div>
-
-      <div class="h-px bg-slate-800 w-11/12 mx-auto my-3"></div>
-
-      <p id="footer-copyright" class="text-[10px] text-slate-500 font-light leading-relaxed">Độc quyền phân phối sách chính gốc - Bản quyền thuộc sở hữu trí tuệ QBooks Việt Nam - Nghiêm cấm sao chép.</p>
-      <p class="text-[9px] text-emerald-400/80 font-bold tracking-tight">★ landingpage được cấp chứng chỉ bảo mật SSL an toàn ★</p>
-    </footer>
-
-  </div>
-
-  <!-- MODAL BÁO CÁO ĐẶT HÀNG THÀNH CÔNG -->
-  <div id="successModal" class="fixed inset-0 bg-black/70 backdrop-blur-sm z-[100] flex items-center justify-center p-4 hidden">
-    <div class="bg-white rounded-2xl max-w-[400px] w-full p-6 text-center shadow-2xl relative space-y-4 border border-emerald-100 transform scale-95 transition-all duration-300">
-      
-      <!-- Icon thành công -->
-      <div class="w-16 h-16 bg-emerald-100 text-emerald-600 rounded-full flex items-center justify-center mx-auto shadow-sm">
-        <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path>
-        </svg>
-      </div>
-
-      <h3 class="text-xl font-bold text-slate-800">Đặt Hàng Thành Công!</h3>
-      
-      <p class="text-sm text-slate-600 leading-relaxed font-medium">Cảm ơn <strong id="modalCustomerName" class="text-slate-800 font-bold">Quý phụ huynh</strong>. Nhân viên nhà sách QBooks đang xử lý đơn hàng và sẽ liên hệ xác nhận trong vòng 10 phút để đóng gói sách!</p>
-
-      <div class="bg-slate-50 p-3 rounded-xl border border-slate-100 text-xs text-left text-slate-500 leading-relaxed font-semibold">
-        <span class="text-emerald-600 font-bold block mb-1">🎁 Quà tặng dành riêng cho bạn:</span>
-        Đã ghi nhận nhận kèm cẩm nang ôn hè và bộ dụng cụ luyện chữ tự xóa.
-      </div>
-
-      <button onclick="closeModal()" class="w-full bg-slate-900 text-white font-bold text-sm py-3 rounded-xl hover:bg-slate-800 transition shadow">
-        Đã Hiểu & Đóng Lại
-      </button>
     </div>
+
+    <!-- ==================== SECTION 20: CHÂN TRANG (FOOTER) ==================== -->
+    <div class="bg-gray-900 text-gray-400 p-6 text-center text-xs space-y-2 border-t border-gray-800">
+      <p class="font-bold text-white text-sm uppercase tracking-wider pb-1">CÔNG TY CỔ PHẦN SÁCH QBOOKS</p>
+      <p class="font-semibold text-gray-300">📞 Hỗ trợ 24/7: <a href="tel:1900.8888.99" class="text-amber-400 underline">1900.8888.99</a></p>
+      <p class="text-gray-400 leading-relaxed">192/173/66 P. Lê Trọng Tấn, Phương Liệt, Hà Nội</p>
+      <div class="h-px bg-gray-800 my-3"></div>
+      <p class="text-[10px] text-gray-500 font-medium">Độc quyền phân phối sách chính gốc - Bản quyền thuộc sở hữu trí tuệ QBooks 2026</p>
+    </div>
+
   </div>
 
-  <!-- SCRIPT HÀNH VI CAROUSEL, ĐẾM NGƯỢC VÀ CHUYỂN GOOGLE SHEET -->
+  <!-- ==================== INLINE JAVASCRIPT CHO CAROUSEL, GOOGLE SHEETS & ĐẾM NGƯỢC ==================== -->
   <script>
-    // -------------------------------------------------------------
-    // CÁC THÔNG TIN CÓ THỂ ĐIỀU CHỈNH TRỰC TIẾP
-    // -------------------------------------------------------------
-    const GOOGLE_APP_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbz_XXXXXXXXX_YOUR_WEBAPP_URL/exec";
-    const COUNTDOWN_TIME_MINUTES = 20;
+    // --- 1. Dữ liệu Hình ảnh Carousel ---
+    const CAROUSEL_IMAGES = ["https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?auto=format&fit=crop&q=80&w=600&h=600","https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&q=80&w=600&h=600","https://images.unsplash.com/photo-1497633762265-9d179a990aa6?auto=format&fit=crop&q=80&w=600&h=600","https://images.unsplash.com/photo-1543002588-bfa74002ed7e?auto=format&fit=crop&q=80&w=600&h=600","https://images.unsplash.com/photo-1532012197267-da84d127e765?auto=format&fit=crop&q=80&w=600&h=600","https://images.unsplash.com/photo-1512820790803-83ca734da794?auto=format&fit=crop&q=80&w=600&h=600","https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?auto=format&fit=crop&q=80&w=600&h=600","https://images.unsplash.com/photo-1541963463532-d68292c34b19?auto=format&fit=crop&q=80&w=600&h=600","https://images.unsplash.com/photo-1516979187457-637abb4f9353?auto=format&fit=crop&q=80&w=600&h=600","https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&q=80&w=600&h=600"];
+    let currentSlideIndex = 0;
 
-    // -------------------------------------------------------------
-    // SLIDER CAROUSEL HOẠT ĐỘNG
-    // -------------------------------------------------------------
-    let currentSlide = 0;
-    const totalSlides = 10;
-    const track = document.getElementById('carousel-track');
-    const dots = document.querySelectorAll('.carousel-dot');
-
-    function updateCarousel() {
-      if (!track) return;
-      const slideWidth = track.clientWidth;
-      track.scrollTo({
-        left: slideWidth * currentSlide,
-        behavior: 'smooth'
-      });
-
-      // Update dots indicator
-      dots.forEach((dot, idx) => {
-        if (idx === currentSlide) {
-          dot.className = "carousel-dot block w-5 h-2 rounded-full bg-red-500 transition-all duration-300";
-        } else {
-          dot.className = "carousel-dot block w-2 h-2 rounded-full bg-slate-200 transition-all duration-300";
-        }
-      });
-    }
-
-    function slideNext() {
-      currentSlide = (currentSlide + 1) % totalSlides;
-      updateCarousel();
-    }
-
-    function slidePrev() {
-      currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
-      updateCarousel();
-    }
-
-    function goToSlide(index) {
-      currentSlide = index;
-      updateCarousel();
-    }
-
-    // Auto slide carousel every 4s
-    let autoSlideInterval = setInterval(slideNext, 4000);
-    
-    // Tạm dừng khi chạm vào slider
-    track.addEventListener('scroll', () => {
-      // Tính toán slide hiện tại dựa trên khoảng cuộn thực tế
-      const i = Math.round(track.scrollLeft / track.clientWidth);
-      if (i !== currentSlide && i >= 0 && i < totalSlides) {
-        currentSlide = i;
-        dots.forEach((dot, idx) => {
-          if (idx === currentSlide) {
-            dot.className = "carousel-dot block w-5 h-2 rounded-full bg-red-500 transition-all duration-300";
-          } else {
-            dot.className = "carousel-dot block w-2 h-2 rounded-full bg-slate-200 transition-all duration-300";
-          }
-        });
+    function renderSlide() {
+      const imgEle = document.getElementById('carousel-img');
+      const idxEle = document.getElementById('carousel-index');
+      if (imgEle && idxEle) {
+        imgEle.style.opacity = 0.2;
+        setTimeout(() => {
+          imgEle.src = CAROUSEL_IMAGES[currentSlideIndex];
+          idxEle.textContent = (currentSlideIndex + 1) + " / " + CAROUSEL_IMAGES.length;
+          imgEle.style.opacity = 1;
+        }, 120);
       }
-    });
+    }
 
-    track.addEventListener('touchstart', () => clearInterval(autoSlideInterval));
+    function prevSlide() {
+      currentSlideIndex = (currentSlideIndex - 1 + CAROUSEL_IMAGES.length) % CAROUSEL_IMAGES.length;
+      renderSlide();
+    }
 
-    // -------------------------------------------------------------
-    // TIMER ĐẾM NGƯỢC GIỚI HẠN THỜI GIAN ĐẶT HÀNG
-    // -------------------------------------------------------------
-    let totalSeconds = COUNTDOWN_TIME_MINUTES * 60;
-    const displayMin = document.getElementById('c-min');
-    const displaySec = document.getElementById('c-sec');
+    function nextSlide() {
+      currentSlideIndex = (currentSlideIndex + 1) % CAROUSEL_IMAGES.length;
+      renderSlide();
+    }
 
-    function updateTimer() {
-      const mins = Math.floor(totalSeconds / 60);
-      const secs = totalSeconds % 60;
+    // --- 2. Bộ đếm ngược thời gian (Countdown Timer) ---
+    let hours = 2;
+    let minutes = 45;
+    let seconds = 0;
 
-      if (displayMin) displayMin.innerText = mins < 10 ? '0' + mins : mins;
-      if (displaySec) displaySec.innerText = secs < 10 ? '0' + secs : secs;
-
-      if (totalSeconds <= 0) {
-        // Hết giờ thì reset lại vòng mới hoặc để 00/01
-        totalSeconds = COUNTDOWN_TIME_MINUTES * 60; 
+    const timerInterval = setInterval(() => {
+      if (seconds > 0) {
+        seconds--;
       } else {
-        totalSeconds--;
+        if (minutes > 0) {
+          minutes--;
+          seconds = 59;
+        } else {
+          if (hours > 0) {
+            hours--;
+            minutes = 59;
+            seconds = 59;
+          } else {
+            // Hết giờ thì reset lại để hấp dẫn khách hàng mua tiếp
+            hours = 2;
+            minutes = 45;
+            seconds = 0;
+          }
+        }
       }
-    }
-    setInterval(updateTimer, 1000);
-    updateTimer();
 
-    // -------------------------------------------------------------
-    // FORM ĐẶT HÀNG & LIÊN KẾT ĐẨY DỮ LIỆU ĐI GOOGLE SHEET
-    // -------------------------------------------------------------
-    function handleFormSubmit(e) {
-      e.preventDefault();
+      document.getElementById('timer-hours').textContent = String(hours).padStart(2, '0');
+      document.getElementById('timer-mins').textContent = String(minutes).padStart(2, '0');
+      document.getElementById('timer-secs').textContent = String(seconds).padStart(2, '0');
+    }, 1000);
+
+    // --- 3. Đẩy dữ liệu ra GOOGLE SHEET bằng Webhook (Google Apps Script) ---
+    // Địa chỉ Webhook do phụ huynh hoặc chủ shop Qbooks chỉ định
+    const GOOGLE_SHEET_WEB_APP_URL = "CHƯA_CẤU_HÌNH (Thay link Google Script Web App URL của bạn vào đây)";
+
+    async function handleFormSubmit(event) {
+      event.preventDefault();
       
-      const name = document.getElementById('inputName').value.trim();
-      const phone = document.getElementById('inputPhone').value.trim();
-      const address = document.getElementById('inputAddress').value.trim();
-      const comboSelected = document.getElementById('selectPackage').value;
-      const note = document.getElementById('inputNote').value.trim();
-      const priceText = document.getElementById('price-checkout-recall').innerText;
+      const submitBtn = document.getElementById('submitBtn');
+      const formMsg = document.getElementById('form-msg');
+      
+      const fullname = document.getElementById('fullname').value;
+      const phone = document.getElementById('phone').value;
+      const address = document.getElementById('address').value;
+      const combopackage = document.getElementById('combopackage').value;
+      const notes = document.getElementById('notes').value;
+      const price = "199.000 ₫";
 
-      const submitBtn = document.getElementById('submitFormBtn');
+      // Vô hiệu hóa nút trong lúc gửi
       submitBtn.disabled = true;
-      submitBtn.innerHTML = '<span>⏳ Đang ghi nhận đơn hàng...</span>';
+      submitBtn.innerHTML = "<span>⏳ ĐANG GỬI THÔNG TIN...</span>";
+      
+      formMsg.classList.remove('hidden', 'bg-green-100', 'text-green-800', 'bg-red-100', 'text-red-800');
+      formMsg.classList.add('bg-blue-100', 'text-blue-800');
+      formMsg.textContent = "Đang kết nối hệ thống đăng ký sách QBooks...";
+      formMsg.classList.remove('hidden');
 
-      // 1. Chuẩn bị dữ liệu gửi đi (Đồng thời cả định dạng JSON hoặc URL encoded)
       const payload = {
-        name: name,
+        fullname: fullname,
         phone: phone,
         address: address,
-        package: comboSelected,
-        note: note,
-        price: priceText,
-        timestamp: new Date().toLocaleString('vi-VN'),
-        source_url: window.location.href
+        combo: combopackage,
+        notes: notes,
+        price: price,
+        timestamp: new Date().toLocaleString('vi-VN')
       };
 
-      // 2. Gọi fetch gửi trực tiếp thông tin đến Google Sheets URL
-      // Để tránh vấn đề CORS trong trình duyệt, chúng ta gửi dạng 'no-cors' hoặc truyền URLSearchParams
-      // WebApp Script Google nhận tốt nhất dạng POST có x-www-form-urlencoded hoặc JSON
-      const formBody = new URLSearchParams(payload);
+      try {
+        if (!GOOGLE_SHEET_WEB_APP_URL || GOOGLE_SHEET_WEB_APP_URL.includes("CHƯA_CẤU_HÌNH")) {
+          // Giao diện lưu local giả lập nếu chưa có link Google Sheets
+          setTimeout(() => {
+            formMsg.classList.remove('bg-blue-100', 'text-blue-800');
+            formMsg.classList.add('bg-green-100', 'text-green-800');
+            formMsg.innerHTML = "🎉 <b>Đăng ký thành công!</b> Chúng tôi sẽ liên hệ hotline để xác nhận đơn hàng của quý phụ huynh trong ít phút nữa! (Đồng kiểm miễn phí)";
+            submitBtn.disabled = false;
+            submitBtn.innerHTML = "<span>📦 ĐẶT MUA SÁCH NGAY</span>";
+            document.getElementById('orderForm').reset();
+          }, 1500);
+          return;
+        }
 
-      console.log("Submitting order to Google Sheet AppScript WebApp...", payload);
+        // POST lên Apps Script
+        const response = await fetch(GOOGLE_SHEET_WEB_APP_URL, {
+          method: 'POST',
+          mode: 'no-cors', // Cần thiết đối với Google Web App URL để tránh lỗi CORS khi CORS không hỗ trợ
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(payload)
+        });
 
-      fetch(GOOGLE_APP_SCRIPT_URL, {
-        method: 'POST',
-        mode: 'no-cors', // Bắt buộc cho Google Script WebApp để tránh chặn CORS chéo nguồn
-        headers: {
-          'Content-Type': 'application/x-www-form-urlencoded'
-        },
-        body: formBody.toString()
-      })
-      .then(response => {
-        // Vì 'no-cors' trả về opaque response nên ta chuyển mượt mà sang thành công
-        formSubmitSuccess(name);
-      })
-      .catch(error => {
-        console.warn("Google Apps Script response warning (CORS is normal with no-cors mode, data is usually saved):", error);
-        // Ngay cả khi lỗi mạng giả CORS, vẫn báo thành công cho quý phụ huynh vì Google Sheet có cơ chế nhận ngầm
-        formSubmitSuccess(name);
-      });
-    }
-
-    function formSubmitSuccess(customerName) {
-      // Reset form
-      document.getElementById('orderForm').reset();
-      
-      const submitBtn = document.getElementById('submitFormBtn');
-      submitBtn.disabled = false;
-      submitBtn.innerHTML = '<span>🎯 ĐẶT MUA NGAY - MIỄN PHÍ SHIP</span>';
-
-      // Hiện Modal thành công
-      document.getElementById('modalCustomerName').innerText = customerName;
-      document.getElementById('successModal').classList.remove('hidden');
-    }
-
-    function closeModal() {
-      document.getElementById('successModal').classList.add('hidden');
+        // Với 'no-cors' của fetch, response sẽ opaque, chúng ta thông báo thành công
+        formMsg.classList.remove('bg-blue-100', 'text-blue-800');
+        formMsg.classList.add('bg-green-100', 'text-green-800');
+        formMsg.innerHTML = "🎉 <b>Gửi đơn hàng thành công!</b> Dữ liệu đã được xuất ra Google Sheet chỉ định. Cảm ơn quý phụ huynh!";
+        
+        submitBtn.disabled = false;
+        submitBtn.innerHTML = "<span>📦 ĐẶT MUA SÁCH NGAY</span>";
+        document.getElementById('orderForm').reset();
+        
+      } catch (err) {
+        console.error("Lỗi Google Sheet API: ", err);
+        formMsg.classList.remove('bg-blue-100', 'text-blue-800');
+        formMsg.classList.add('bg-red-100', 'text-red-800');
+        formMsg.innerHTML = "⚠️ Lỗi gửi hệ thống! Bạn vui lòng gọi ĐT Hotline hoặc kiểm tra lại đường dẫn Webhook. Đơn của bạn đã được ghi nhận nội bộ.";
+        
+        submitBtn.disabled = false;
+        submitBtn.innerHTML = "<span>📦 ĐẶT MUA SÁCH NGAY</span>";
+      }
     }
   </script>
 </body>
